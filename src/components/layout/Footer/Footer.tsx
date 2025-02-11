@@ -1,17 +1,21 @@
 import type { FunctionComponent } from "@/common/types";
+import { useContext } from "react";
+import { ThemeContext, ThemeContextInterface } from "@/context/ThemeContext";
 import { Link } from "@tanstack/react-router";
 import BrandLogo from "@/assets/images/png/logo-dark.png"
+import BrandLogoLight from "@/assets/images/png/logo-light.png"
 
 export const Footer = (): FunctionComponent => {
+  const { darkTheme } = useContext(ThemeContext) as ThemeContextInterface;
   return (
-    <footer className="border-t border-gray-800 bg-black text-gray-400">
+    <footer className="border-t border-gray-100 bg-background  text-gray-400">
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row justify-between">
           {/* Left Section */}
           <div className="mb-8 md:mb-0">
           <Link to="/" className="">
 						<img 
-							src={BrandLogo} 
+						src={darkTheme ? BrandLogo : BrandLogoLight} 
 							alt="Brand Logo" 
 							className="h-10 w-auto"
 						/>

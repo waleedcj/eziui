@@ -1,22 +1,13 @@
-# src/components/layout
+# src/components/forms
 
-Components relating to layouts should be placed in this directory.
+Components relating to forms should be placed in this directory.
 
-Consider using additional subdirectories with the same format (component + story + unit test) for subcomponents to aid in organization.
+Each component should be placed in its own folder with an index.ts file to handle exports.
 
 Example:
 
-- layout/Sidebar/
-  - SidebarItem/
-    - SidebarItem.tsx
-    - SidebarItem.stories.tsx
-    - SidebarItem.test.tsx
-  - SidebarSection/
-    - SidebarSection.tsx
-    - SidebarSection.stories.tsx
-    - SidebarSection.test.tsx
-  - Sidebar/
-    - Sidebar.tsx
-    - Sidebar.stories.tsx
-    - Sidebar.test.tsx
+- forms/Input
+  - Input.tsx
+  - Input.stories.tsx
+  - Input.test.tsx
   - index.ts

@@ -1,5 +1,4 @@
 import type { FunctionComponent } from "@/common/types";
-import { MainLayout } from "@/components/layout/MainLayout";
 import { motion } from "framer-motion";
 import mockup from "@/assets/images/png/mock.png";
 import swmansion from "@/assets/images/webp/swmansion.webp";
@@ -8,11 +7,8 @@ import { Link } from "@tanstack/react-router";
 
 export const Home = (): FunctionComponent => {
 	return (
-		<MainLayout>
+		// <MainLayout>
 			<div className="min-h-screen">
-				{" "}
-				{/* Changed from bg-black to bg-black/80 */}
-				{/* Hero Section */}
 				<div className="container mx-auto px-4 py-20">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 						{/* Left Content */}
@@ -21,10 +17,7 @@ export const Home = (): FunctionComponent => {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.6 }}
 						>
-							{/* <span className="bg-gray-800 text-blue-400 px-4 py-1 rounded-full text-sm">
-                Introducing React Native Animations
-              </span> */}
-							<h1 className="text-5xl md:text-6xl font-bold mt-6 mb-6 text-neutral-900">
+							<h1 className="text-5xl md:text-6xl font-bold mt-6 mb-6 text-neutral-900 font-jakarta">
 								Make your apps look{" "}
 								<span className="text-[#FF851B]">10x awesome</span>
 							</h1>
@@ -134,7 +127,7 @@ export const Home = (): FunctionComponent => {
 						transition={{ duration: 0.6 }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-900">
+						<h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-900 font-jakarta">
 							As simple as copy and paste
 						</h2>
 						<p className="text-gray-500 text-xl">
@@ -154,7 +147,7 @@ export const Home = (): FunctionComponent => {
 							>
 								<div className="flex flex-row gap-2 items-center">
 								<div className="text-3xl mb-4">{feature.icon}</div>
-								<h3 className="text-xl text-neutral-900 font-semibold mb-2">
+								<h3 className="text-xl text-neutral-900 font-semibold mb-2 font-jakarta">
 									{feature.title}
 								</h3>
 								</div>
@@ -165,7 +158,7 @@ export const Home = (): FunctionComponent => {
 					</div>
 				</div>
 			</div>
-		</MainLayout>
+		// </MainLayout>
 	);
 };
 

@@ -1,12 +1,14 @@
 import { createRouter } from "@tanstack/react-router";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import { routeTree } from "./routeTree.gen.ts";
-import "./styles/tailwind.css";
-import './common/i18n'
+import App from "@/App.tsx";
+import { routeTree } from "@/routeTree.gen.ts";
+import "@/styles/index.css";
+import '@/common/i18n'
 
-const router = createRouter({ routeTree });
+const router = createRouter({ routeTree ,  defaultPendingComponent: () => 'loading...',
+	defaultPendingMinMs: 0,
+	defaultPendingMs: 0,});
 
 declare module "@tanstack/react-router" {
 	interface Register {

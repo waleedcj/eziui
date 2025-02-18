@@ -13,8 +13,6 @@ const App = ({ router }: AppProps): FunctionComponent => {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<ThemeProvider>
-				
-				
 				<RouterProvider router={router} />
 			
 				{/* <TanStackRouterDevelopmentTools

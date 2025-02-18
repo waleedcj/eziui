@@ -8,7 +8,7 @@ export type CodeBlockProps = {
         tabs?: never;
       }
     | {
-        code?: never;
+        code: never;
         tabs: Array<{
           name: string;
           code: string;

@@ -12,6 +12,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["DM Sans", "sans-serif"], // Primary font
+        jakarta: ["Plus Jakarta Sans", "sans-serif"], // Secondary font
+      },
       colors: {
         background: "rgb(var(--background) / <alpha-value>)",
         foreground: "rgb(var(--foreground) / <alpha-value>)",
@@ -55,6 +59,7 @@ export default {
       },
     },
   },
+  plugins: [addVariablesForColors],
 };
 
 function addVariablesForColors({ addBase, theme }: any) {

@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "DM Sans";
+	src: url("@/assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf")
+		format("truetype");
+}
+@font-face {
+	font-family: "Plus Jakarta Sans";
+	src: url("@/assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
+		format("truetype");
+}
 
 :root {
+    font-family: "DM Sans", "Plus Jakarta Sans";
     --background: 255 255 255;
     --foreground: 2 6 23;
      /* Neutral colors - Light theme */

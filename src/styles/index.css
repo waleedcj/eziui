@@ -43,6 +43,8 @@
      --gray-900: 17 24 39;      /* #111827 */
      --gray-950: 3 7 18;        /* #030712 */
 
+     --code-block: #282c34;
+
     --gradient: linear-gradient(to right, #f0f0f0 1px, transparent 1px),
       linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
     --radial-gradient: radial-gradient(#e5e7eb 1px, transparent 1px);

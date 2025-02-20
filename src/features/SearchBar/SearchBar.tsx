@@ -1,11 +1,11 @@
 import { FunctionComponent } from "@/common/types";
-import { IconSearch } from "@tabler/icons-react";
+import { MyIcons } from "@/assets/images/svg/icons";
 
 export const SearchBar = (): FunctionComponent => {
   return (
     <div className="relative flex items-center">
       <div className="absolute left-3 text-gray-400">
-        <IconSearch size={18} />
+        <MyIcons.SearchIcon className="w-4/5 h-4/5" />
       </div>
       <input
         type="text"

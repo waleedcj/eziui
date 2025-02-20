@@ -1,5 +1,9 @@
 import { SVGProps } from "react";
 
+interface CircularLoadingProps extends SVGProps<SVGSVGElement> {
+	stroke: string;
+  }
+
 const ReactIcon = (props: SVGProps<SVGSVGElement>) => (
 	<svg
 		// class="w-6 h-6 text-gray-800 dark:text-white"
@@ -58,9 +62,202 @@ const ExpoIcon = (props: SVGProps<SVGSVGElement>) => (
 		></path>
 	</svg>
 );
+const SearchIcon = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		{...props}
+	>
+		<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+		<path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+		<path d="M21 21l-6 -6" />
+	</svg>
+);
+
+const SunIcon = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		{...props}
+	>
+		<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+		<path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+		<path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+	</svg>
+);
+const MoonIcon = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		{...props}
+	>
+		<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+		<path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+	</svg>
+);
+const CheckIcon = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		{...props}
+	>
+		<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+		<path d="M5 12l5 5l10 -10" />
+	</svg>
+);
+
+const ClipboardIcon = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		{...props}
+	>
+		<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+		<path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+		<path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
+	</svg>
+);
+
+const SourceCodeIcon = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		{...props}
+	>
+		<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+		<path d="M14.5 4h2.5a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-5" />
+		<path d="M6 5l-2 2l2 2" />
+		<path d="M10 9l2 -2l-2 -2" />
+	</svg>
+);
+
+const ScreenShareIcon = (props: SVGProps<SVGSVGElement>) => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke="currentColor"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		{...props}
+	>
+		<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+		<path d="M21 12v3a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1h9" />
+		<path d="M7 20l10 0" />
+		<path d="M9 16l0 4" />
+		<path d="M15 16l0 4" />
+		<path d="M17 4h4v4" />
+		<path d="M16 9l5 -5" />
+	</svg>
+);
+
+
+
+// View box is based on 50x50 size
+// from: https://codepen.io/jczimm/pen/vEBpoL
+
+const CIRCLE_RADIUS = 50 / 2;
+
+const CircularLoading = ({ stroke, ...props }: CircularLoadingProps) => {
+  const center = CIRCLE_RADIUS;
+  
+  return (
+    <svg 
+      viewBox={`0 0 ${CIRCLE_RADIUS * 2} ${CIRCLE_RADIUS * 2}`} 
+      width={40} 
+      height={40}
+      {...props}
+    >
+      <circle
+        fill="none"
+        stroke={stroke}
+        strokeWidth={5}
+        strokeLinecap="round"
+        cx={CIRCLE_RADIUS}
+        cy={CIRCLE_RADIUS}
+        r={CIRCLE_RADIUS - 5}
+      >
+        <animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="rotate"
+          from={`0 ${center} ${center}`}
+          to={`360 ${center} ${center}`}
+          dur="1.33s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="stroke-dasharray"
+          values="1,200; 89,200; 89 200;"
+          dur="1s"
+          repeatCount="indefinite"
+        />
+        <animate 
+          attributeName="stroke-dashoffset" 
+          values="0;-35;-124;" 
+          dur="1s" 
+          repeatCount="indefinite" 
+        />
+      </circle>
+    </svg>
+  );
+};
 
 export const MyIcons = {
 	React: ReactIcon,
 	Lottie: Lottie,
 	ExpoIcon: ExpoIcon,
+	SearchIcon: SearchIcon,
+	SunIcon: SunIcon,
+	MoonIcon: MoonIcon,
+	CheckIcon: CheckIcon,
+	ClipboardIcon: ClipboardIcon,
+	SourceCodeIcon: SourceCodeIcon,
+	ScreenShareIcon: ScreenShareIcon,
+	CircularLoading: CircularLoading,
 };

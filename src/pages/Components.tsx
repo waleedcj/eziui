@@ -1,7 +1,7 @@
 import type { FunctionComponent } from "@/common/types";
 import { Sidebar, SidebarBody, SidebarLink } from "@/components/ui/SideBar/SideBar";
 import { Outlet } from "@tanstack/react-router";
-import { IconBrandTabler, IconUserBolt } from "@tabler/icons-react";
+import { links } from "@/data";
 
 export const Components = (): FunctionComponent => {
 	// const [activeCategory, setActiveCategory] = useState("all");
@@ -13,22 +13,16 @@ export const Components = (): FunctionComponent => {
 	// 		component.title.toLowerCase().includes(searchQuery.toLowerCase())
 	// );
 
-	const links = [
-		{
-			label: "All Components",
-			href: "/components/all-components",
-			icon: (
-				<IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-			),
-		},
-		{
-			label: "Animated Button",
-			href: "/components/animated-button",
-			icon: (
-				<IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-			),
-		},
-	];
+	// const links = [
+	// 	{
+	// 		label: "All Components",
+	// 		href: "/components/all-components",
+	// 	},
+	// 	{
+	// 		label: "Animated Button",
+	// 		href: "/components/animated-button",
+	// 	},
+	// ];
 
 
 	return (

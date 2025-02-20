@@ -8,7 +8,7 @@ type PreviewQRProps = {
 
 const PreviewQR: React.FC<PreviewQRProps> = ({ previewUrl }) => {
 	return (
-		<div className="rounded-lg max-w-md w-full p-6">
+		<div className="max-w-md w-full p-6">
 			<div className="text-center">
 				{/* <img src="/expo-logo.png" alt="Expo" className="h-8 mx-auto mb-4" /> */}
                 <MyIcons.ExpoIcon className="h-8 mx-auto mb-4" />

@@ -69,7 +69,6 @@ export const SidebarLink = ({
       className="flex items-center justify-start gap-2 group/sidebar py-2 hover:translate-x-1 transition text-gray-500 hover:text-[#FF851B]  duration-200" 
       {...props}
     >
-      {link.icon}
       <span className="text-base whitespace-pre inline-block">
         {link.label}
       </span>

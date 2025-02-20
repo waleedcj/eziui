@@ -20,3 +20,8 @@ export type CodeBlockTheme = {
     expandButtonTitle?: string;
     className?: string;
  } & React.HTMLAttributes<HTMLDivElement>
+
+ export interface CommandBlockProps {
+  commands: string | string[];
+  className?: string;
+}

@@ -1,8 +1,9 @@
 // import { useState } from "react";
 import type { FunctionComponent } from "@/common/types";
-import { SimpleCodeBlock } from "@/features/CodeBlock";
+// import { SimpleCodeBlock } from "@/features/CodeBlock";
 // import { CodeBlock } from "../code-block";
-import { CodeBlocks } from "@/features/CodeBlock";
+import { SimpleCodeBlock } from "@/features/CodeBlock";
+import { CodeHighlighter } from "@/features/CodeHighlighter";
 
 export const PreviewComponents = (): FunctionComponent => {
 	// const [activeCategory, setActiveCategory] = useState("all");
@@ -28,7 +29,7 @@ export const PreviewComponents = (): FunctionComponent => {
 							// initial={{ opacity: 0, y: 20 }}
 							// animate={{ opacity: 1, y: 0 }}
 							// transition={{ duration: 0.4, delay: index * 0.1 }}
-							className="bg-gray-800 rounded-xl overflow-hidden"
+							className="rounded-xl overflow-hidden"
 						>
 						
 							{/* <div className="p-4 bg-gray-100 h-48 flex items-center justify-center">
@@ -57,7 +58,8 @@ export const PreviewComponents = (): FunctionComponent => {
 										filename={`${component.title}.tsx`}
 									/> */}
 
-									<CodeBlocks code={component.code} language={"tsx"} fileName="animation.tsx" qrCodeUrl="www.google.com" />
+									{/* <SimpleCodeBlock code={component.code} language={"tsx"}  /> */}
+									<CodeHighlighter code="npx create-react-app@latest" language="tsx"  blockRadius={16} />
 									{/* <SimpleCodeBlock code={component.code} language={"tsx"} fileName="animation.tsx" /> */}
 								{/* </div> */}
 
@@ -96,25 +98,7 @@ const components = [
 		category: "basic",
 		description: "A simple fade-in animation using Animated.timing",
 		tags: ["opacity", "timing", "basic"],
-		code: `import { Animated, useRef, useEffect } from 'react-native';
-
-const FadeInView = ({ children }) => {
-  const fadeAnim = useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 1000,
-      useNativeDriver: true,
-    }).start();
-  }, []);
-
-  return (
-    <Animated.View style={{ opacity: fadeAnim }}>
-      {children}
-    </Animated.View>
-  );
-};`,
+		code: `npx create-expoapp@lasterst`,
 	},
 	{
 		id: 2,

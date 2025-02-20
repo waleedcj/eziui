@@ -19,6 +19,7 @@ export default {
       colors: {
         background: "rgb(var(--background) / <alpha-value>)",
         foreground: "rgb(var(--foreground) / <alpha-value>)",
+        "code-block": "var(--code-block)",
         // ... other existing colors ...
 
         // Neutral colors

@@ -4,4 +4,6 @@ export type ContentLayoutProps = {
   tags?: string[];
   children: React.ReactNode;
   className?: string;
+  link?: string;
+  linkName?: string;
 }; 

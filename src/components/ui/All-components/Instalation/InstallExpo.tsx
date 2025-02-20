@@ -1,75 +1,153 @@
+import React from "react";
 import { FunctionComponent } from "@/common/types";
 import { ContentLayout, StepGuide, StepSection } from "@/components/layout";
 import { CommandBlock } from "@/features";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const InstallExpo = (): FunctionComponent => {
-  return (
-    <ContentLayout
-      title="Create Expo App"
-      description="A command-line tool to create a new Expo and React Native project. This tool simplifies the initialization process by providing various templates to get started quickly without the need for manual configuration."
-      tags={["expo", "react-native", "cli"]}
-    >
-      <div className="space-y-8">
-        {/* Initial Setup */}
-        <StepGuide>
-          <StepSection title="Create a new project">
-            <p className="text-gray-500 mb-4">Choose your preferred package manager:</p>
-            <div className="space-y-4">
-              <CommandBlock commands="npx create-expo-app" />
-              <CommandBlock commands="yarn create expo-app" />
-              <CommandBlock commands="pnpm create expo-app" />
-              <CommandBlock commands="bunx create-expo-app" />
-            </div>
-          </StepSection>
+	const [activeTab, setActiveTab] = React.useState<
+		"npx" | "yarn" | "pnpm" | "bunx"
+	>("npx");
 
-          <StepSection title="Project Configuration">
-            <p className="text-gray-500 mb-4">You'll be prompted to name your project:</p>
-            <CommandBlock commands="What is your app named? > my-app" />
-            <p className="text-gray-500 mt-4">
-              The default template will be used, which comes pre-configured with:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-500 ml-4 mt-2">
-              <li>Expo CLI for development</li>
-              <li>Expo Router for navigation</li>
-              <li>TypeScript configuration</li>
-              <li>Essential dependencies for React Native development</li>
-            </ul>
-          </StepSection>
-        </StepGuide>
+	return (
+		<ContentLayout
+			title="Create Expo App"
+			description="Initialize your Expo app using popular package managers. A template with TypeScript and file navigation will be installed. Visit the official docs to customize further."
+			link="https://docs.expo.dev/more/create-expo/"
+			linkName="Expo Docs"
+			tags={["expo", "react-native", "cli"]}
+		>
+			<Tabs
+				value={activeTab}
+				onValueChange={(v: any) =>
+					setActiveTab(v as "npx" | "yarn" | "pnpm" | "bunx")
+				}
+			>
+				<TabsList className="h-12 w-full justify-start rounded-none border-b-0 bg-transparent p-0">
+					<TabsTrigger
+						value="npx"
+						className="relative w-[100px] rounded-lg items-center border-b-2 border-b-transparent bg-transparent px-4 py-2 font-medium text-gray-500 shadow-none transition-none data-[state=active]:bg-gray-200 data-[state=active]:text-gray-900"
+					>
+						npm
+					</TabsTrigger>
 
-        {/* Package Manager Configurations */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold">Package Manager Configurations</h2>
-          
-          <div className="grid gap-6">
-            <div>
-              <h3 className="font-semibold mb-2">Yarn 2+ Configuration</h3>
-              <p className="text-gray-500 mb-2">Add to .yarnrc.yml:</p>
-              <CommandBlock commands="nodeLinker: node-modules" />
-            </div>
+					<TabsTrigger
+						value="yarn"
+						className="relative w-[100px] rounded-lg items-center border-b-2 border-b-transparent bg-transparent px-4 py-2 font-medium text-gray-500 shadow-none transition-none data-[state=active]:bg-gray-200 data-[state=active]:text-gray-900"
+					>
+						yarn
+					</TabsTrigger>
 
-            <div>
-              <h3 className="font-semibold mb-2">pnpm Configuration</h3>
-              <p className="text-gray-500 mb-2">Add to .npmrc:</p>
-              <CommandBlock commands="node-linker=hoisted" />
-            </div>
+					<TabsTrigger
+						value="pnpm"
+						className="relative w-[100px] rounded-lg items-center border-b-2 border-b-transparent bg-transparent px-4 py-2 font-medium text-gray-500 shadow-none transition-none data-[state=active]:bg-gray-200 data-[state=active]:text-gray-900"
+					>
+						pnpm
+					</TabsTrigger>
 
-            <div>
-              <h3 className="font-semibold mb-2">Yarn Modern EAS Configuration</h3>
-              <p className="text-gray-500 mb-2">Add to package.json:</p>
-              <CommandBlock 
-                commands={[
-                  "{",
-                  '  "scripts": {',
-                  '    "eas-build-pre-install": "corepack enable && yarn set version 4"',
-                  "  }",
-                  "}"
-                ]} 
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </ContentLayout>
-  );
+					<TabsTrigger
+						value="bunx"
+						className="relative w-[100px] rounded-lg items-center border-b-2 border-b-transparent bg-transparent px-4 py-2 font-medium text-gray-500 shadow-none transition-none data-[state=active]:bg-gray-200 data-[state=active]:text-gray-900"
+					>
+						bunx
+					</TabsTrigger>
+				</TabsList>
+				<div className="space-y-8">
+					{/* Initial Setup */}
+					<TabsContent value="npx" className="mt-0">
+						<StepGuide>
+							<StepSection title="Create a new project">
+								<div className="space-y-4">
+									<CommandBlock commands="npx create-expo-app@latest" />
+								</div>
+							</StepSection>
+
+							<StepSection title="You'll be prompted to name your project">
+								<CommandBlock commands="What is your app named? > my-app" />
+							</StepSection>
+							<StepSection title="Start your app">
+								<CommandBlock commands={["cd my-app", "npx expo start"]} />
+							</StepSection>
+						</StepGuide>
+					</TabsContent>
+
+					<TabsContent value="yarn" className="mt-0">
+						<StepGuide>
+							<StepSection title="Create a new project">
+								<div className="space-y-4">
+									<CommandBlock commands="yarn create expo-app" />
+								</div>
+							</StepSection>
+
+							<StepSection title="You'll be prompted to name your project">
+								<CommandBlock commands="What is your app named? > my-app" />
+							</StepSection>
+							<StepSection title="Follow these steps if you are uisng yarn 2+">
+								<div>
+									<p className="text-gray-500 mb-2">Add to .yarnrc.yml:</p>
+									<CommandBlock commands="nodeLinker: node-modules" />
+								</div>
+
+								<div>
+									<p className="text-gray-500 my-2">Add to package.json:</p>
+									<CommandBlock
+										commands={[
+											"{",
+											'  "scripts": {',
+											'    "eas-build-pre-install": "corepack enable && yarn set version 4"',
+											"  }",
+											"}",
+										]}
+									/>
+								</div>
+							</StepSection>
+							<StepSection title="Start your app">
+								<CommandBlock commands={["cd my-app", "yarn start"]} />
+							</StepSection>
+						</StepGuide>
+					</TabsContent>
+
+					<TabsContent value="pnpm" className="mt-0">
+						<StepGuide>
+							<StepSection title="Create a new project">
+								<div className="space-y-4">
+									<CommandBlock commands="pnpm create expo-app" />
+								</div>
+							</StepSection>
+
+							<StepSection title="You'll be prompted to name your project">
+								<CommandBlock commands="What is your app named? > my-app" />
+							</StepSection>
+							<StepSection title="Package Manager Configurations">
+								<>
+									<p className="text-gray-500 mb-2">Add to .npmrc:</p>
+									<CommandBlock commands="node-linker=hoisted" />
+								</>
+							</StepSection>
+							<StepSection title="Start your app">
+								<CommandBlock commands={["cd my-app", "pnpm start"]} />
+							</StepSection>
+						</StepGuide>
+					</TabsContent>
+
+					<TabsContent value="bunx" className="mt-0">
+						<StepGuide>
+							<StepSection title="Create a new project">
+								<div className="space-y-4">
+									<CommandBlock commands="bun create expo" />
+								</div>
+							</StepSection>
+
+							<StepSection title="You'll be prompted to name your project">
+								<CommandBlock commands="What is your app named? > my-app" />
+							</StepSection>
+							<StepSection title="Start your app">
+								<CommandBlock commands={["cd my-app", "bun expo start"]} />
+							</StepSection>
+						</StepGuide>
+					</TabsContent>
+				</div>
+			</Tabs>
+		</ContentLayout>
+	);
 };

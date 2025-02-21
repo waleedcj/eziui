@@ -2,12 +2,10 @@ import React from "react";
 import { FunctionComponent } from "@/common/types";
 import { ContentLayout, StepGuide, StepSection } from "@/components/layout";
 import { CommandBlock } from "@/features";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui";
 
 export const InstallExpo = (): FunctionComponent => {
-	const [activeTab, setActiveTab] = React.useState<
-		"npx" | "yarn" | "pnpm" | "bunx"
-	>("npx");
+	const [activeTab, setActiveTab] = React.useState<"npx" | "yarn">("npx");
 
 	return (
 		<ContentLayout
@@ -19,9 +17,7 @@ export const InstallExpo = (): FunctionComponent => {
 		>
 			<Tabs
 				value={activeTab}
-				onValueChange={(v: any) =>
-					setActiveTab(v as "npx" | "yarn" | "pnpm" | "bunx")
-				}
+				onValueChange={(v: any) => setActiveTab(v as "npx" | "yarn")}
 			>
 				<TabsList className="h-12 w-full justify-start rounded-none border-b-0 bg-transparent p-0">
 					<TabsTrigger
@@ -38,7 +34,7 @@ export const InstallExpo = (): FunctionComponent => {
 						yarn
 					</TabsTrigger>
 
-					<TabsTrigger
+					{/* <TabsTrigger
 						value="pnpm"
 						className="relative w-[100px] rounded-lg items-center border-b-2 border-b-transparent bg-transparent px-4 py-2 font-medium text-gray-500 shadow-none transition-none data-[state=active]:bg-gray-200 data-[state=active]:text-gray-900"
 					>
@@ -50,7 +46,7 @@ export const InstallExpo = (): FunctionComponent => {
 						className="relative w-[100px] rounded-lg items-center border-b-2 border-b-transparent bg-transparent px-4 py-2 font-medium text-gray-500 shadow-none transition-none data-[state=active]:bg-gray-200 data-[state=active]:text-gray-900"
 					>
 						bunx
-					</TabsTrigger>
+					</TabsTrigger> */}
 				</TabsList>
 				<div className="space-y-8">
 					{/* Initial Setup */}
@@ -103,46 +99,6 @@ export const InstallExpo = (): FunctionComponent => {
 							</StepSection>
 							<StepSection title="Start your app">
 								<CommandBlock commands={["cd my-app", "yarn start"]} />
-							</StepSection>
-						</StepGuide>
-					</TabsContent>
-
-					<TabsContent value="pnpm" className="mt-0">
-						<StepGuide>
-							<StepSection title="Create a new project">
-								<div className="space-y-4">
-									<CommandBlock commands="pnpm create expo-app" />
-								</div>
-							</StepSection>
-
-							<StepSection title="You'll be prompted to name your project">
-								<CommandBlock commands="What is your app named? > my-app" />
-							</StepSection>
-							<StepSection title="Package Manager Configurations">
-								<>
-									<p className="text-gray-500 mb-2">Add to .npmrc:</p>
-									<CommandBlock commands="node-linker=hoisted" />
-								</>
-							</StepSection>
-							<StepSection title="Start your app">
-								<CommandBlock commands={["cd my-app", "pnpm start"]} />
-							</StepSection>
-						</StepGuide>
-					</TabsContent>
-
-					<TabsContent value="bunx" className="mt-0">
-						<StepGuide>
-							<StepSection title="Create a new project">
-								<div className="space-y-4">
-									<CommandBlock commands="bun create expo" />
-								</div>
-							</StepSection>
-
-							<StepSection title="You'll be prompted to name your project">
-								<CommandBlock commands="What is your app named? > my-app" />
-							</StepSection>
-							<StepSection title="Start your app">
-								<CommandBlock commands={["cd my-app", "bun expo start"]} />
 							</StepSection>
 						</StepGuide>
 					</TabsContent>

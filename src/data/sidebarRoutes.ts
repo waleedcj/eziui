@@ -4,6 +4,10 @@ export const links = [
         href: "/components/install-expo",
     },
     {
+        label: "Install Reanimated",
+        href: "/components/install-reanimated",
+    },
+    {
         label: "All Components",
         href: "/components/all-components",
     },

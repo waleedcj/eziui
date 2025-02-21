@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Instalation } from '@/components/ui/All-components/Instalation/Instalation'
+import { Instalation } from '@/pages/components/Instalation'
 
 export const Route = createFileRoute('/components/animated-button')({
   component: () => < Instalation />,

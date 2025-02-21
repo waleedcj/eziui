@@ -24,7 +24,7 @@ export const ContentLayout = ({
 						href={link}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="underline"
+						className="underline text-neutral-900 hover:text-neutral-400 transition-colors duration-200"
 					>
 						{linkName}
 					</a>

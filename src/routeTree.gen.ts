@@ -21,6 +21,9 @@ import { Route as DocsDocsIdImport } from './routes/Docs/$docsId'
 
 // Create Virtual Routes
 
+const ComponentsInstallReanimatedLazyImport = createFileRoute(
+  '/components/install-reanimated',
+)()
 const ComponentsInstallExpoLazyImport = createFileRoute(
   '/components/install-expo',
 )()
@@ -44,6 +47,14 @@ const DocsIndexRoute = DocsIndexImport.update({
   path: '/Docs/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const ComponentsInstallReanimatedLazyRoute =
+  ComponentsInstallReanimatedLazyImport.update({
+    path: '/install-reanimated',
+    getParentRoute: () => ComponentsRoute,
+  } as any).lazy(() =>
+    import('./routes/components/install-reanimated.lazy').then((d) => d.Route),
+  )
 
 const ComponentsInstallExpoLazyRoute = ComponentsInstallExpoLazyImport.update({
   path: '/install-expo',
@@ -116,6 +127,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsInstallExpoLazyImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/install-reanimated': {
+      id: '/components/install-reanimated'
+      path: '/install-reanimated'
+      fullPath: '/components/install-reanimated'
+      preLoaderRoute: typeof ComponentsInstallReanimatedLazyImport
+      parentRoute: typeof ComponentsImport
+    }
     '/Docs/': {
       id: '/Docs/'
       path: '/Docs'
@@ -134,6 +152,7 @@ export const routeTree = rootRoute.addChildren({
     ComponentsAnimatedButtonRoute,
     ComponentsAllComponentsLazyRoute,
     ComponentsInstallExpoLazyRoute,
+    ComponentsInstallReanimatedLazyRoute,
   }),
   DocsDocsIdRoute,
   DocsIndexRoute,
@@ -161,7 +180,8 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/components/animated-button",
         "/components/all-components",
-        "/components/install-expo"
+        "/components/install-expo",
+        "/components/install-reanimated"
       ]
     },
     "/Docs/$docsId": {
@@ -177,6 +197,10 @@ export const routeTree = rootRoute.addChildren({
     },
     "/components/install-expo": {
       "filePath": "components/install-expo.lazy.tsx",
+      "parent": "/components"
+    },
+    "/components/install-reanimated": {
+      "filePath": "components/install-reanimated.lazy.tsx",
       "parent": "/components"
     },
     "/Docs/": {

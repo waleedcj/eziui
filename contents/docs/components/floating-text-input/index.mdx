@@ -297,46 +297,47 @@ export default function App() {
 }, [password, isPasswordValid]);
 
   return (
-    <View style={styles.inputWrapper}>
-        <FloatingTextInput
-        label="Password"
-        value={password}
-		valueColor={colors.Neutral700}
-        onChangeText={handlePasswordChange} 
-        backgroundColor={colors.background}
-		isFocusBorderColor={colors.PrimaryNormal}
-		isBlurLabelColor={colors.Neutral500}
-		isFocusLabelColor={colors.PrimaryNormal}
-		isBlurBorderColor={colors.Neutral100}
-		isBlurValueBorderColor={colors.Neutral300}
-        secureTextEntry={!showPassword}
-        clearButtonMode="never"
-        isError={passwordError}
-        errorMessage={passwordRequirementMessage}
-        />
-        <TouchableOpacity
-        style={styles.eyeIcon}
-        onPress={() => setShowPassword(!showPassword)}
-        >
-        <Ionicons
-            name={showPassword ? 'eye-off' : 'eye'}
-            size={24}
-            color={colors.Neutral700}
-        />
-        </TouchableOpacity>
-    </View>        
-);
+			<View style={styles.inputWrapper}>
+				<FloatingTextInput
+					label="Password"
+					value={password}
+					valueColor={colors.Neutral700}
+					onChangeText={handlePasswordChange} 
+					backgroundColor={colors.background}
+					isFocusBorderColor={colors.PrimaryNormal}
+					isBlurLabelColor={colors.Neutral500}
+					isFocusLabelColor={colors.PrimaryNormal}
+					isBlurBorderColor={colors.Neutral100}
+					isBlurValueBorderColor={colors.Neutral300}
+					secureTextEntry={!showPassword}
+					clearButtonMode="never"
+					isError={passwordError}
+					errorMessage={passwordRequirementMessage}
+				/>
+				<TouchableOpacity
+				  style={styles.eyeIcon}
+				  onPress={() => setShowPassword(!showPassword)}
+				>
+					<Ionicons
+						name={showPassword ? 'eye-off' : 'eye'}
+						size={24}
+						color={colors.Neutral700}
+					/>
+			</TouchableOpacity>
+		</View>
+	);
 }
-  const styles = StyleSheet.create({
-  inputWrapper: {
-    marginBottom: 10,
-  },
-  eyeIcon: {
-    position: 'absolute',
-    right: 16,
-    top: 32,
-    zIndex: 2,
-  },
+
+const styles = StyleSheet.create({
+	inputWrapper: {
+	  marginBottom: 10,
+	},
+	eyeIcon: {
+	  position: 'absolute',
+	  right: 16,
+	  top: 32,
+	  zIndex: 2,
+	},
 });
   ```
 

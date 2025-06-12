@@ -239,37 +239,38 @@ export default function App() {
 		}, 4000);
 	};
 
-  return (
-    <StepAnimatedButton
-        buttonColor={colors.AuxColorTwo}
-        textColor={colors.Neutral0}
-        buttonTouchColor={colors.AuxColorThree}
-        currentStep={currentStep}
-        reduceMotion="never"
-        onPress={downloadAction}
-        steps={[
-            {
-                Icon: <MaterialCommunityIcons accessible={false} color={colors.Neutral0} name="download" size={18} />,
-                title: "Download",
-            },
-            {
-                Icon: (
-                    <MaterialCommunityIcons
-                        accessible={false}
-                        color={colors.Neutral0}
-                        name="progress-download"
-                        size={18}
-                    />
-                ),
-                title: "Downloading...",
-            },
-            {
-                Icon: <MaterialCommunityIcons accessible={false} color={colors.Neutral0} name="check" size={18} />,
-                title: "Downloaded",
-            },
-        ]}
-    />
-  );}
+    return (
+        <StepAnimatedButton
+            buttonColor={colors.AuxColorTwo}
+            textColor={colors.Neutral0}
+            buttonTouchColor={colors.AuxColorThree}
+            currentStep={currentStep}
+            reduceMotion="never"
+            onPress={downloadAction}
+            steps={[
+                {
+                    Icon: <MaterialCommunityIcons accessible={false} color={colors.Neutral0} name="download" size={18} />,
+                    title: "Download",
+                },
+                {
+                    Icon: (
+                        <MaterialCommunityIcons
+                            accessible={false}
+                            color={colors.Neutral0}
+                            name="progress-download"
+                            size={18}
+                        />
+                    ),
+                    title: "Downloading...",
+                },
+                {
+                    Icon: <MaterialCommunityIcons accessible={false} color={colors.Neutral0} name="check" size={18} />,
+                    title: "Downloaded",
+                },
+            ]}
+        />
+    );
+}
   ```
 
 ## Props

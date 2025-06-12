@@ -46,7 +46,7 @@ keywords:  [
   ]
 author: "walid memon"
 ogImage: "/animatedHeader.png"
-lastModified: "2025-05-15T10:00:00Z"
+lastModified: "2025-06-12T07:10:35Z"
 ---
 ## Preview
 
@@ -70,7 +70,7 @@ lastModified: "2025-05-15T10:00:00Z"
   <StepperItem title="Step 2: Create the Header Component">
     Create a new file (e.g., `src/components/Header.tsx`) and copy the following code:
 
-    ```typescript:Header.tsx
+```typescript:Header.tsx
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -90,7 +90,7 @@ type HeaderProps = {
 };
 
 export function Header({ headerShown }: HeaderProps) {
-	const  colors  = useAppColors();
+	const colors = useAppColors();
 	const insets = useSafeAreaInsets();
 
 	const headerAnimatedStyle = useAnimatedStyle(() => {
@@ -213,13 +213,13 @@ const styles = StyleSheet.create({
 		marginLeft: 16,
 	},
 });
-    ```
+```
   </StepperItem>
 
   <StepperItem title="Step 3: Usage with Scroll Logic">
     Create a screen component (e.g., `src/screens/DemoScreen.tsx`) where you'll use the `Header` and implement the scroll animation logic.
 
-        ```typescript:DemoScreen.tsx
+```typescript:DemoScreen.tsx
 import React from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 import Animated, { useSharedValue, useAnimatedScrollHandler, withSpring } from "react-native-reanimated";
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
 		fontWeight: "400",
 	},
 });
-        ```
+```
   </StepperItem>
 </Stepper>
 
@@ -357,7 +357,7 @@ const styles = StyleSheet.create({
         <StepperItem title="Step 2: Create the Header Component">
     Create a new file (e.g., `src/components/Header.tsx`) and copy the following code:
 
-    ```typescript:Header.tsx
+```typescript:Header.tsx
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -377,7 +377,7 @@ type HeaderProps = {
 };
 
 export function Header({ headerShown }: HeaderProps) {
-	const  colors  = useAppColors();
+	const colors = useAppColors();
 	const insets = useSafeAreaInsets();
 
 	const headerAnimatedStyle = useAnimatedStyle(() => {
@@ -500,13 +500,13 @@ const styles = StyleSheet.create({
 		marginLeft: 16,
 	},
 });
-    ```
+```
   </StepperItem>
 
   <StepperItem title="Step 3: Usage with Scroll Logic">
     Create a screen component (e.g., `src/screens/DemoScreen.tsx`) where you'll use the `Header` and implement the scroll animation logic.
 
-        ```typescript:DemoScreen.tsx
+```typescript:DemoScreen.tsx
 import React from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 import Animated, { useSharedValue, useAnimatedScrollHandler, withSpring } from "react-native-reanimated";
@@ -623,7 +623,7 @@ const styles = StyleSheet.create({
 		fontWeight: "400",
 	},
 });
-        ```
+```
     </StepperItem>
     </Stepper>
       </TabsContent>
